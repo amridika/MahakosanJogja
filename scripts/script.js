@@ -1,0 +1,10 @@
+let kosList = [];
+let barangList = [];
+let selectedImages = [];
+let deletedImages = [];
+let filteredItems;
+let map;
+const kosContainer = document.getElementById('kosContainer');
+const barangContainer = document.getElementById('barangContainer');
+const filterType = document.getElementById('filterType');
+const root = document.documentElement;
