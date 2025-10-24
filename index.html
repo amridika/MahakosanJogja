@@ -1,23 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mahakosan jogja</title>
-    <link rel="stylesheet" href="styles/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.55.0/dist/umd/supabase.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   </head>
   <body data-page="home">
     <div id="header-placeholder"></div>
     <div class="main">
-      <div class="heroSection"></div>
-      <div id="kosSection">Kos</div>
-      <div id="barangSection">Barang</div>
-      <div id="infoSection">Info</div>
-      <div id="footer-placeholder"></div>
+      <div class="heroSection">
+        <div class="heroContent">
+          <h1>WEBNYA <span class="colorBlue">ANAK KOS</span></h1>
+          <p class="descMain">Explore semua kebutuhan kosan kamu dimulai kos kosan, barang-barang yang kalian butuhkan hingga informasi-informasi terupdate yang wajib kalian ketahui</p>
+          <button id="btnLanjut" class="btn">Get Started</button>
+        </div>
+      </div>
+      <div class="contentMainSection">
+        <div id="kosSection">
+          <div class="titleContent">
+            <h2 id="cariKos">Cari Kos</h2>
+          </div>
+          <div class="kosContent">
+            <div class="kosWrapper">
+              <span class="material-symbols-outlined sliderBtn prevKos"> keyboard_arrow_up </span>
+              <div class="kosSwiper swiper">
+                <div id="kosContainer" class="swiper-wrapper"></div>
+              </div>
+              <span class="material-symbols-outlined sliderBtn nextKos"> keyboard_arrow_up </span>
+            </div>
+            <div id="map" class="mapHome"></div>
+          </div>
+        </div>
+
+        <div id="barangSection">
+          <h2>Barang Murah</h2>
+          <div class="barangWrapper">
+            <span class="material-symbols-outlined sliderBtn prevBarang"> keyboard_arrow_left </span>
+            <div class="barangSwiper swiper">
+              <div id="barangContainer" class="swiper-wrapper"></div>
+            </div>
+            <span class="material-symbols-outlined sliderBtn nextBarang"> keyboard_arrow_right </span>
+          </div>
+        </div>
+
+        <div id="infoSection">
+          <h2>Info Hemat</h2>
+          <div class="infoWrapper">
+            <span class="material-symbols-outlined sliderBtn prevInfo"> keyboard_arrow_left </span>
+            <div class="infoSwiper swiper">
+              <div id="infoContainer" class="swiper-wrapper"></div>
+            </div>
+            <span class="material-symbols-outlined sliderBtn nextInfo"> keyboard_arrow_right </span>
+          </div>
+        </div>
+      </div>
     </div>
-    <script src="js/script.js"></script>
+    <div id="footer-placeholder"></div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="scripts/script.js"></script>
   </body>
 </html>
-
-
