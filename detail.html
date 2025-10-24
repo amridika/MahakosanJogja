@@ -1,25 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Detail Kos</title>
-    <link rel="stylesheet" href="styles/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
-</head>
-<body data-page="detail">
+    <link rel="stylesheet" href="styles/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.55.0/dist/umd/supabase.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  </head>
+  <body data-page="detail">
     <div id="header-placeholder"></div>
 
     <div class="mainDetail">
-        <div class="titleDetail"></div>
-        <div class="imageDisplay"></div>
-        <div class="description">
-            <div class="mainContent"></div>
-            <div class="mapContent"></div>
+      <div class="titleDetail">
+        <span id="iconBack" class="material-symbols-outlined" onclick="history.back()">arrow_back_ios</span>
+        <h2 id="name"></h2>
+      </div>
+      <div class="imageDisplay">
+        <div class="mainImage">
+          <img id="imageContent" class="mainImage" />
         </div>
+        <div class="subImageWrap">
+          <div class="subImageSwiper swiper">
+            <div id="subImageDisplay" class="swiper-wrapper"></div>
+          </div>
+        </div>
+      </div>
+      <div class="descriptionDetail">
+        <div id="leftContent" class="leftContent">
+          <div class="firstRow">
+            <span id="type" class="boxText"></span>
+            <div class="addressWarp wrapItem">
+              <span class="material-symbols-outlined locationIcon">location_on</span>
+              <p id="address" class="location"></p>
+            </div>
+          </div>
+          <div class="secRow detail kosOnly">
+            <h3>Spesifikasi</h3>
+            <div class="specItem">
+              <div class="sizeWrap wrapItem">
+                <span class="material-symbols-outlined">pageless</span>
+                <p id="size" class="item"></p>
+              </div>
+              <div class="floorWrap wrapItem">
+                <span class="material-symbols-outlined">stairs_2</span>
+                <p id="floor" class="item"></p>
+              </div>
+              <div class="electricityWrap wrapItem">
+                <span class="material-symbols-outlined" id="iconFlash"></span>
+                <p id="electricity" class="item"></p>
+              </div>
+            </div>
+          </div>
+          <div class="thirdRow detail kosOnly">
+            <h3>Fasilitas Kamar</h3>
+            <div id="facilityKamar" class="specItemBox"></div>
+          </div>
+          <div class="fourthRow detail kosOnly">
+            <h3>Fasilitas Kos</h3>
+            <div id="facilityKos" class="specItemBox"></div>
+          </div>
+          <div class="fifthRow">
+            <h3 id="descTitle">Informasi Tambahan</h3>
+            <p id="desc"></p>
+          </div>
+          <div class="mapContent">
+            <h3>Lokasi</h3>
+            <div id="map"></div>
+          </div>
+        </div>
+        <div class="rightContent">
+          <div class="priceContainer">
+            <h3 id="price"></h3>
+            <div class="btmContent">
+              <button id="orderButton" class="btn">Pesan</button>
+              <p id="room"></p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-   <div id="footer-placeholder"></div>
-     <script src="scripts/script.js"></script>
-</body>
-
+    <div id="footer-placeholder"></div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="scripts/script.js"></script>
+  </body>
 </html>
