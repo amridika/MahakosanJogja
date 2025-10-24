@@ -1,16 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
-    <link rel="stylesheet" href="styles/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
-</head>
-<body data-page="login">
+    <link rel="stylesheet" href="styles/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.55.0/dist/umd/supabase.min.js"></script>
+  </head>
+  <body data-page="login">
+    <div id="alert" class="alert">
+      <span id="alertMessage">This is an alert box.</span>
+      <span class="closebtn" onclick="closeAlert()">&times;</span>
+    </div>
     <div id="header-placeholder"></div>
-    <div class="mainLogin"></div> 
-    <div id="footer-placeholder"></div>
-    <script src="scripts/script.js"></script>   
-</body>
+    <div class="mainLogin">
+      <form id="loginForm" class="formContainer active">
+        <h2>Login</h2>
+        <div class="inputContent">
+          <label>Email</label>
+          <input type="email" placeholder="Enter Email" name="email" />
+          <label>Password</label>
+          <input type="password" placeholder="Enter Password" name="password" />
+        </div>
+        <button type="submit" class="loginBtn btn">Login</button>
+        <p class="textSignup">Belum punya akun?<a href="#" onclick="showForm(`registerForm`)" class="registerloginLink"> Buat akun</a></p>
+      </form>
+      <form id="registerForm" class="formContainer">
+        <h2>Register</h2>
+        <div class="inputContent">
+          <label>Username</label>
+          <input type="text" placeholder="Enter Username" name="username" />
+          <label>Email</label>
+          <input type="email" placeholder="Enter Email" name="email" />
+          <label>Password</label>
+          <input type="password" placeholder="Enter Password" name="password" minlength="6" />
+        </div>
+        <button type="submit" class="registerBtn btn">Register</button>
+        <p class="textSignup">Sudah punya akun?<a href="#" onclick="showForm(`loginForm`)" class="registerloginLink"> Login</a></p>
+      </form>
+    </div>
+    <script src="scripts/script.js"></script>
+  </body>
 </html>
